@@ -22,3 +22,52 @@
 - [n,3] [3,1] = [n,1] // XW = H(X), 행렬의 곱셈 결과 형식을 이해해두자!
 - ex) [n,3] [?,?] = [n,2]의 경우 곱셈결과 형식에 따라 3by2임을 알 수 있다.
 -Lecture(theory)에서는 H(x) = Wx + b라면 텐서플로우에서는 H(X) = XW 형태로 구현된다. 수학적의미는 동일함을 알아두자.
+
+@섹션5. Binary Classification
+- 둘 중 하나의 결과를 도출시키는 classification
+- 예시는 페이스북 피드 업로드, 스팸메일 처리, 신용카드 오사용 분류
+- 이러한 예시를 컴퓨터로 쉽게 코드를 짤 수 있도록 encoding을 함, 0과 1로 구분짓는 것임. 스팸메일(1)_정상메일(0)
+- 0과 1로 이루어진 결과만 도출하는 상황에서 linear regression으로 해결하는 것은 cost의 값이 매우 커지게 됨.
+- 이유인즉 1이상의 값, 0이하의 값을 linear regression에서 도출되기 때문임
+- 이 cost의 값을 낮추기 위한 그래프, 시그모이드(logistic fuction)라 함.
+- H(x) = z = Wx+b, g(z) -> 0~1사이의 결과만 나오게 됨
+
+- logistic function을 최소화 하기 위한 cost fuction.
+- cost함수에 적용시 굽이친 그래프가 나오게 되며, local minimum을 global minimum을 찾지 못하게 하므로 y가 1인 상황과 0인 상황으로 나누며 로그 함수를 이용한 cost function을 적용함. 
+- -log(H(x) : y=1 // -log(1-H(x)) : y=0
+- 위 식을 하나의 식으로 통합할 수 있음.
+- 텐서플로우에서 위 cost함수를 표현하고 gradientdescentoptimizer를 이용해서 적용하면 됨.
+
+- tensorflow에서 데이터 읽기.
+- numpy를 통해 대규모 다차원 배열을 쉽게 처리할 수 있게 해주는 파이썬 라이브러리 사용.
+- import numpy as np
+- np.loadtxt(csv 파일을 불러옴, 데이터를 나누는 기준, 데이터 타입)
+- python Slicing : 시퀀스 자료구조의 특정 데이터를 잘라내는 것
+- [:, 0:-1] 앞에 [ : ] 는 전체 행을 의미, [0:-1]은 0번 인덱스부터 -1번 인덱스까지 // -1은 마지막 원소 전까지
+- [-1]이면 마지막 원소 이전것만 적용
+
+- placeholder에서 shape=[None, 3] 코드를 볼 수 있다. none은 데이터 갯수를 초반에 모를 경우 이후에 임의로 바뀔 수 있다는 것임
+
+- Queue Runners : 데이터가 커서 메모리에 올리기 힘든 경우 Queue Runners를 사용함. 여러 파일을 큐에 쌓아 놓고 reader로 파일을 읽어옴
+- 과정 : 1. 파일 이름을 리스트로 생성 2. 파일 읽어올 리더 선언, 연결 3. value 파싱 설정(디코딩)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
