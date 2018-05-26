@@ -51,6 +51,20 @@
 - Queue Runners : 데이터가 커서 메모리에 올리기 힘든 경우 Queue Runners를 사용함. 여러 파일을 큐에 쌓아 놓고 reader로 파일을 읽어옴
 - 과정 : 1. 파일 이름을 리스트로 생성 2. 파일 읽어올 리더 선언, 연결 3. value 파싱 설정(디코딩)
 
+@ 세션6 
+
+
+@ 세션7 Learning rate, Evaluation
+- learning rate를 잘못 설정할 경우.
+- test data를 통해 모델을 다시 한번 재 평가하여 확인해주어야 함.
+- training과 test datasets을 나누어야 함. 모델의 정확도를 파악해야 하기 때문임
+- training : 모델에 학습되는 데이터 / test datasets : 모델이 한번도 보지 못한 데이터
+- learning rate가 너무 크면, 움직이는 폭이 커서 밖으로 튀어나가는 overshooting이 발생할 수 있음
+- learning rate가 너무 작으면 학습이 너무 느려서 진행이 안될 수 있으며, 작은 굴곡이 존재하면 그 안에서 갇히는 문제가 발생 - local minima 현상
+- 이 문제를 normalization 정규화를 통해 0~1사이의 값을 매겨주는 일반화 과정을 거침.
+- 데이터 크기가 들쭉날쭉할때는 일반화 과정을 하는 것이 좋음
+
+- MNIST Dataset : 우편번호를 자동으로 읽을 수 있도록 만듬
 
 
 
