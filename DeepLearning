@@ -61,7 +61,16 @@
 - binary classification으로 multinomial classification 구현이 가능함.
 - ex) a, b, c가 있는 경우 a b / c - c or not, b / a c - b or not, a / b c - a or not
 - y --s(y)--> p(모두 합하면 1, 확률) <-one-hot enncoding-> 하나의 유력한 값이 1로 변함. 
-- cross-entropy cost function 
+- cross-entropy cost function, 결과를 예측하기 위해 위 수식에 대입하여 0이 나오면 cost가 0이므로 결과가 적중한다는 의미임. 
+- Cross-entropy VS Logistic cost
+- Gradient descent 똑같이 적용.
+
+- tensorflow에 적용.
+- hypothesis = tf.nn.softmax(tf.matmul(X,W)+b)
+- Cost function : cross entropy
+- cost = tf.reduce_mean(-tf.reduce_sum(Y * tf.log(hypothesis), axis=1))
+- optimizer = tf.train.GradientDescentOptimizer(learning_rata=0.1).minimize(cost)
+
 
 
 
@@ -71,13 +80,18 @@
 - test data를 통해 모델을 다시 한번 재 평가하여 확인해주어야 함.
 - training과 test datasets을 나누어야 함. 모델의 정확도를 파악해야 하기 때문임
 - training : 모델에 학습되는 데이터 / test datasets : 모델이 한번도 보지 못한 데이터
+
 - learning rate가 너무 크면, 움직이는 폭이 커서 밖으로 튀어나가는 overshooting이 발생할 수 있음
 - learning rate가 너무 작으면 학습이 너무 느려서 진행이 안될 수 있으며, 작은 굴곡이 존재하면 그 안에서 갇히는 문제가 발생 - local minima 현상
 - 이 문제를 normalization 정규화를 통해 0~1사이의 값을 매겨주는 일반화 과정을 거침.
 - 데이터 크기가 들쭉날쭉할때는 일반화 과정을 하는 것이 좋음
+- overfitting 문제 : 너무 데이터에 집착(너무 line을 구부리는)하여 타 모델에 직접 적용되었을 경우 일반적인 결과를 내지 못할 수 있음.
+- 이를 해결하기 위해 더 많은 트레이닝 데이터, 갖고 있는 feature의 갯수를 줄이거나 Regularization(일반화)를 거침.
+- regularization은 각 요소들을 제곱하여 더한 것에 regularization strength를 곱한 것을 loss 함수에 더하면 됨.
+
+
 
 - MNIST Dataset : 우편번호를 자동으로 읽을 수 있도록 만듬
-
 
 
 
