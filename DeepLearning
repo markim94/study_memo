@@ -1,4 +1,4 @@
-### 인프런_딥러닝 강의
+## 인프런_딥러닝 강의
 
 @섹션0~3.
 - (hypothesis, cost function, gradient descent algo.)
@@ -51,7 +51,19 @@
 - Queue Runners : 데이터가 커서 메모리에 올리기 힘든 경우 Queue Runners를 사용함. 여러 파일을 큐에 쌓아 놓고 reader로 파일을 읽어옴
 - 과정 : 1. 파일 이름을 리스트로 생성 2. 파일 읽어올 리더 선언, 연결 3. value 파싱 설정(디코딩)
 
-@ 세션6 
+@ 세션6. Softmax Regression
+- logistic regression 복습
+- H(x) = Wx의 결과가 1을 초과한 큰 값이 나오므로 이를 z로 생각하고, g(z)라는 수식이 큰 값들을 0과 1사이로 압축해줌. 
+- x -> w -> z -> y의 햇 // z를 통해 시그모이드로 변환, y햇은 0과 1사이
+- 2개의 결과를 구분 짓은 리니어를 그리는 것.
+
+- multinomial classification ( 여러개의 입력을 통한 여러개의 결과 )
+- binary classification으로 multinomial classification 구현이 가능함.
+- ex) a, b, c가 있는 경우 a b / c - c or not, b / a c - b or not, a / b c - a or not
+- y --s(y)--> p(모두 합하면 1, 확률) <-one-hot enncoding-> 하나의 유력한 값이 1로 변함. 
+- cross-entropy cost function 
+
+
 
 
 @ 세션7 Learning rate, Evaluation
