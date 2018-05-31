@@ -94,12 +94,44 @@
 - MNIST Dataset : 우편번호를 자동으로 읽을 수 있도록 만듬
 
 @ 섹션8. 딥러닝의 기본개념: 시작과 XOR문제
+- Deep Neural Network.
+- 궁극적인 목적 : 인간의 생각을 대신 해주는 것.
+- 인간의 생각의 주체 -> 뇌, 뇌의 구성을 연구 -> 뉴런 (다소 단순한)
+- 뉴런 : 시냅스로 부터 input, 이 자체를 X*W로 볼 수 있음.
+
+- AND/OR등을 기계가 푼다면 되지 않을까 라는 과거의 생각.
+- 그러나 XOR을 풀지 못하였음.
+- Minsky가 XOR문제를 풀지 못할 것이라는 증명을 냄
+- 이유인즉, Multi layer(MLP)에서 학습하는 문제가 어렵기 떄문.
+
+- 이후 Paul의 Backpropagation으로 이 문제를 풀 수 있게 되었음.
+- 그러나, 다시 한번 Backpropagation으로 해결하지 못하는, 여러개의 Deep한 layer가 있어 성능이 저하하게 됨(Deep하므로 전달이 제대로 되지 않아서)
+- 차라리 SVM, Random forest로 더 좋은 결과를 낳을 수 있음. -> 제2침체기
+- 이후 CIFAR 캐나다 단체에서 적극적으로 지원함. 
+
+- 2006, 2007년. Hinton, Bengio가 논문을 발표.
+- Deep한 layer에 초기값을 잘 줄 수 있는 방도에 대한 논문. (신경망 구축)
+- 즉, 어려운 문제를 풀 수 있게 됨. 이러한 것을 대중성을 얻기 위해 Deep Learning이라고 이름 부침.
+
+- 계속해서 딥러닝 분야는 발전하고 있음. 예시로 IMAGENET은 2012년 급격하게 높은 오류율을 큰 격차로 떨어트리게 됨.(26.2%->15.3%)
+- 2015년에 다다르게 되어서는 인간은 5%의 오류를 얻는데에 비해 기계는 3%의 오류를 얻게 됨.
+- IMAGENET은 이미지 구분 연구
+- 이전까지의 실패와 침체기에 대한 Hinton이 밝힌 4가지 이유 -> Cs231n 강좌 참고
 
 
+- shape, rank, rank는 [의 갯수를 볼것. shape는 안부터 파악.
+- Axis(축 개념) : 가장 바깥 -1,  안으로 들어갈수록 up
+- BroadCast : shape가 달라도 연산, 격을 맞춰주는 역할을 함. 그러나 가급적 같은 shape로 계산할 것.
+- Argmax : 가장 큰 값의 위치
+- reduce_mean, reduce_sum : 이또한 축과 같이 사용할 수 있음.
 
-
-
-
+- Reshape : 가급적 안 shape는 조정하지 말 것. shape모양을 조정해주는
+- Reshape squeeze : 쫙 펴주는, expand_dims : 선택한 숫자로 shape 변경
+- one-hot : 선택된 자리를 1로 바꾸어 주는 // tf.one_hot
+- casting : true, false를 1과 0으로 cast하거나 소수를 int형으로 바꾸어주는 식의 cast 변환 // tf.cast
+- stack : tf.stack
+- ones and zeros like : 0이나 1로 똑같은 모양을 만들어주는
+- Zip : 복수의 tensor를 zip으로 묶어 한 번에 해결하는 역할이 가능. 
 
 
 
