@@ -1,4 +1,4 @@
-## 인프런_딥러닝 강의
+# 인프런_딥러닝 강의
 
 @섹션0~3.
 - (hypothesis, cost function, gradient descent algo.)
@@ -133,6 +133,7 @@
 - ones and zeros like : 0이나 1로 똑같은 모양을 만들어주는
 - Zip : 복수의 tensor를 zip으로 묶어 한 번에 해결하는 역할이 가능. 
 
+@ 섹션9. backpropagation
 
 
 
