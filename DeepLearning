@@ -147,6 +147,9 @@
 - 이를 통해 미분값(영향도)를 얻게 되며, 미분값이 나타내는 바는 식의 변화도의 비율을 나타내는 것임.
 - 실제로 back propagation은 텐서플로우에서 텐서보드가 이를 계산하므로 직접 chain rule을 통해 체크할 필요가 없음.
 
+- L2 regularization
+- overfitting은 trainning data에만 지나치게 적응하여 test data에 제대로 반응하지 못하는 현상이다.
+- 여기서 L2 regularization은 가장 일반적으로 사용되는 일반화 기법으로, overfitting은 가중치 매개변수의 값이 커서 발생하는 경우가 가중치가 클수록 패널티를 부과하여 overfitting을 억제함.
 
 
 
