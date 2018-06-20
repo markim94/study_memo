@@ -109,7 +109,7 @@
 -다른 하나의 인스턴스는 위 웹어플리케이션을 이용함(서비스이용자-공격 파트)
 -서비스 이용자가 부하를 일으켜야 하므로 부하발생기를 설치, 실행해야 함.
 -서비스를 이용하는 인스턴스의 서버를 실행함 
--'sudo update' 명령어를 입력.
+-'sudo apt-get update' 명령어를 입력.
 -이용할 수 있는 프로그램 목록이 업데이트 되며,
 -'sudo apt-get install apache2-utils' 입력하여 부하발생기 설치
 -서비스 이용 과부하를 발생시키는 부하발생기, ab를 이용할 수 있음.
@@ -159,4 +159,12 @@
 
 +ELB(Elastic Load Balancer) 생성
 -aws에서 load balancer 탭->create load balancer
+-프로토콜과 보안그룹 설정, Health Check(정기적인 서버체크로 적절한 부하분산 가능), 인스턴스 설정, 태그, 리뷰->elb 생성
+-elb생성시 DNS name이 주어짐. 해당 dns로 접속하면 여러 인스턴스로 부하분산을 시켜줌.
+-elb에 edit instance를 통해 인스턴스를 연결함.
+
+
+
+
+
 
