@@ -171,6 +171,8 @@
 
 
 
+
+
 @섹션11. Convolutuonal Neural Networks
 - CNN 아이디어의 기원
 - CNN 필터
@@ -188,4 +190,4 @@
 - 알파고 : CNN 적용, input 19*19*48
 
 - lab CNN
-- 
+-  
