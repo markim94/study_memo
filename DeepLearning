@@ -153,9 +153,39 @@
 
 
 @섹션10. ReLU and 초기값 정하기
+- 
+
+
+
+- 정확도 높이기
+- 시그모이드 함수를 사용시 고단의 계산에 적용될 경우 정확도가 떨어지기 때문에 ReLu함수를 사용함.
+- ReLu함수를 사용시 정확도가 올라감.
+- 이외에도 Xavier 함수가 있음.
+- Overfitting : 지나치게 정확도에 맞추는 것. 학습데이터의 갯수를 늘리거나 정규화를 시켜 해결하는 방법이 있음. 
+- 이외에도 아래와 같은 방법들이 있음.
+- dropout 방법을 통해 몇 개의 노드를 끊어버림.
+- Model Ensemble : 간단한 학습 알고리즘으로 다수 의 학습 결과를 결합해서 예측 성능을 높임. 여러 개의 학습 데이터를 통해 모델을 만들고 이를 결합함.
+- Optimizers 사용 : 그 중에서 Adam Optimizer가 제일 유능함.
+- NN LEGO Play
+
+
 
 
 @섹션11. Convolutuonal Neural Networks
+- CNN 아이디어의 기원
+- CNN 필터
+- 사이즈가 점점 줄어드는 문제. -> Zero pad를 한 줄씩 만들어서 붙임.
+- (N-f) / stride + 1
+- Poling layer(sampling) -> max pooling 방식 채택
+- 장점 : 계산 비용 절감, 위 샘플링 과정 생략 가능
 
+- 적용사례들
+- LeNet-1 : 1989년, 최초의 CNN 발표
+- AlexNet : layer 5개 사용, 앙상블 7회 적용으로 오차 줄임.
+- GoogLeNet : 2014년,초기 CNN보다 효과적으로 차원을 줄이면서 망을 깊게 할수 있는 방법.
+- ResNet : 2015년, 인간보다 적은 오차율 3.6%로 이미지넷에서 우승
+- Sentence Classification : CNN을 NLP에 적용.
+- 알파고 : CNN 적용, input 19*19*48
 
-
+- lab CNN
+- 
