@@ -1,0 +1,7 @@
+#scalablelayout
+- 깃허브에서 scalable layout의 코드를 긁어와 안드로이드 빌드 gradle에 implementation함.
+- xml에서 <com.ssomai.android.scalablelayout.ScalableLayout> 태그 생성
+- 해당 태그에 app:scale_base_height, width를 통해 전체 크기 설정
+- 내부 아이템 태그에 app:scale_width, height를 이용해 아이템 크기 설정
+- 아이템 위치는 scale_left, top을 이용해 좌푯값을 통한 위치 조정
+- textsize는 app:scale_textsize 태그 속성을 이용해 설정
