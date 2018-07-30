@@ -26,3 +26,8 @@ title : git-guide
 - fetch : 히스토리 확인
 - push : repository로 코드 이동
 - pull : repository에서 코드 가져오기
+
+*git 적용
+- branch 만들기 : git branch (브랜치이름)
+- branch 변경 : git checkout (변경할 브랜치이름)
+- remote repo : git remote add (주소별명:대개 origin) (해당 repository의 주소)
