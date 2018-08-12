@@ -1,0 +1,16 @@
+# intent flag
+- 인텐트 플래그 종류
+: single_top, reorder to front, clear top, no history, clear when task reset 
+
+
+- single top : 연속적으로 적용되어야만 사용이 가능.
+
+- reorder to front : 동일한 액티비티를 최상위로 올림.
+
+- clear top : 동일한 액티비티에 쌓였을 경우 루트 액티비티를 제외시키고 destroy
+
+- no history : back시 삭제
+
+- clear when task reset : 
+
+
